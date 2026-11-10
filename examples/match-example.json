@@ -1,0 +1,52 @@
+{
+  "match": {
+    "competition": "Campeonato Brasileiro Série B",
+    "season": "2026",
+    "date": "2026-09-26",
+    "home_team": "Náutico - PE",
+    "away_team": "Sport Recife - PE",
+    "venue": "Aflitos, Recife"
+  },
+  "attendance": {
+    "total": null,
+    "paying": null,
+    "non_paying": null,
+    "tickets_sold": 10056,
+    "ticket_revenue": 569746.50
+  },
+  "financial": {
+    "gross_revenue": 569746.50,
+    "operating_expenses": null,
+    "taxes": null,
+    "fees": null,
+    "other_deductions": null,
+    "reported_net_result": 266584.47,
+    "methodological_net_result": null,
+    "retention_margin": null
+  },
+  "financial_items": [
+    {"source_label": "SEGURO TORCEDOR", "amount": 321.79, "category": "operating_expense"},
+    {"source_label": "5% - FEDERAÇÃO LOCAL", "amount": 28487.33, "category": "fee"},
+    {"source_label": "5% - INSS [RENDA BRUTA]", "amount": 28487.33, "category": "tax"},
+    {"source_label": "20% - INSS SOBRE A REMUNERAÇÃO DA ARBITRAGEM, AUXILIARES E FISCAIS", "amount": 4396.00, "category": "tax"},
+    {"source_label": "ARBITRAGEM, AUXILIARES E FISCAIS", "amount": 21980.00, "category": "operating_expense"},
+    {"source_label": "CONFECÇÃO DE INGRESSOS - FUTEBOL CARD", "amount": 5472.27, "category": "operating_expense"},
+    {"source_label": "COORDENADORES / ORGANIZADORES", "amount": 2540.00, "category": "operating_expense"},
+    {"source_label": "EQUIPE DE APOIO", "amount": 8130.00, "category": "operating_expense"},
+    {"source_label": "EQUIPE DE ORIENTADORES", "amount": 3690.00, "category": "operating_expense"},
+    {"source_label": "INGRESSO PROMOCIONAL", "amount": 89825.00, "category": "unknown", "notes": "Natureza não esclarecida; não incluir no resultado metodológico."},
+    {"source_label": "LIMPEZA E CONSERVAÇÃO", "amount": 3150.00, "category": "operating_expense"},
+    {"source_label": "LOCAÇÃO DE EQUIPAMENTOS", "amount": 12505.74, "category": "operating_expense"},
+    {"source_label": "LOCAÇÃO DE GRADES", "amount": 13550.00, "category": "operating_expense"},
+    {"source_label": "OUTRAS DESPESAS", "amount": 7864.37, "category": "operating_expense"},
+    {"source_label": "POSTO MÉDICO, EQUIPE MÉDICA E AMBULÂNCIA", "amount": 11115.00, "category": "operating_expense"},
+    {"source_label": "SEGURANÇA PRIVADA", "amount": 52550.00, "category": "operating_expense"},
+    {"source_label": "TRANSPORTE E HOSPEDAGEM DA ARBITRAGEM", "amount": 9097.20, "category": "operating_expense"}
+  ],
+  "source": {
+    "organization": "Federação Pernambucana de Futebol (FPF)",
+    "document": "Boletim Financeiro nº 21181",
+    "url": null
+  },
+  "notes": "Exemplo baseado em uma partida da Série B usada para examinar a estrutura do borderô da FPF. Não é uma partida do Campeonato Pernambucano. O documento informa ingressos vendidos, mas não público total ou pagante. INGRESSO PROMOCIONAL permanece sem classificação; por isso, o resultado metodológico e a margem não foram calculados."
+}
