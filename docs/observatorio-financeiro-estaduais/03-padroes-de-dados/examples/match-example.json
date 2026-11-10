@@ -557,7 +557,7 @@
       "source_section": "B3 - DESPESAS OPERACIONAIS",
       "normalized_label": null,
       "financial_class": "unknown",
-      "canonical_category": "UNK-UNCLASSIFIED",
+      "canonical_category": null,
       "amount_minor": 8982500,
       "currency": "BRL",
       "accounting_role": "unclassified",
