@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OFE Match Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["match", "attendance", "financial", "financial_items", "source"],
+  "properties": {
+    "match": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["competition", "season", "date", "home_team", "away_team"],
+      "properties": {
+        "competition": {"type": "string", "minLength": 1},
+        "season": {"type": "string", "minLength": 1},
+        "date": {"type": ["string", "null"], "format": "date"},
+        "home_team": {"type": "string", "minLength": 1},
+        "away_team": {"type": "string", "minLength": 1},
+        "venue": {"type": ["string", "null"]}
+      }
+    },
+    "attendance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "total": {"type": ["integer", "null"], "minimum": 0},
+        "paying": {"type": ["integer", "null"], "minimum": 0},
+        "non_paying": {"type": ["integer", "null"], "minimum": 0},
+        "tickets_sold": {"type": ["integer", "null"], "minimum": 0},
+        "ticket_revenue": {"type": ["number", "null"], "minimum": 0}
+      }
+    },
+    "financial": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "gross_revenue": {"type": ["number", "null"], "minimum": 0},
+        "operating_expenses": {"type": ["number", "null"], "minimum": 0},
+        "taxes": {"type": ["number", "null"], "minimum": 0},
+        "fees": {"type": ["number", "null"], "minimum": 0},
+        "other_deductions": {"type": ["number", "null"], "minimum": 0},
+        "reported_net_result": {"type": ["number", "null"]},
+        "methodological_net_result": {"type": ["number", "null"]},
+        "retention_margin": {"type": ["number", "null"]}
+      }
+    },
+    "financial_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_label", "amount", "category"],
+        "properties": {
+          "source_label": {"type": "string", "minLength": 1},
+          "amount": {"type": "number", "minimum": 0},
+          "category": {"type": ["string", "null"]},
+          "notes": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["organization", "document"],
+      "properties": {
+        "organization": {"type": "string", "minLength": 1},
+        "document": {"type": "string", "minLength": 1},
+        "url": {"type": ["string", "null"], "format": "uri"}
+      }
+    },
+    "notes": {"type": ["string", "null"]}
+  }
+}
