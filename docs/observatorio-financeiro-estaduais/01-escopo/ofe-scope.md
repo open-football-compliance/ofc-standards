@@ -2,12 +2,10 @@
 
 **Organization:** Open Football Compliance (OFC)  
 **Document ID:** OFC-OFE-SCOPE  
-**Version:** 0.1  
-**Status:** Draft  
+**Version:** 1.0.0  
+**Status:** Proposed  
 **Initial season:** 2027  
 **Last updated:** November 2026
-
----
 
 ## 1. Overview
 
@@ -47,11 +45,13 @@ Os documentos financeiros publicados para uma partida são tratados como fontes 
 
 Uma partida poderá possuir mais de uma versão documental, por exemplo, em situações de retificação ou republicação de borderô.
 
-### 3.2 Initial scope
+### 3.2 Competition scope
 
-A iniciativa começa com os campeonatos estaduais brasileiros, priorizando competições profissionais e seus documentos financeiros oficiais.
+O OFE abrange **competições estaduais profissionais de futebol, masculinas e femininas**, realizadas no território brasileiro.
 
-O escopo inicial contempla:
+A inclusão de uma competição não depende do gênero da modalidade, mas do atendimento aos critérios de escopo, da natureza profissional da competição e da disponibilidade de documentação financeira oficial por partida.
+
+O escopo contempla informações como:
 
 - Receitas de bilheteria e outras receitas vinculadas à partida, quando discriminadas.
 - Público pagante e não pagante.
@@ -60,201 +60,194 @@ O escopo inicial contempla:
 - Taxas, tributos e deduções.
 - Resultado financeiro declarado ou calculado conforme a metodologia do OFE.
 
-### 3.3 Competition expansion phases
+A implantação será progressiva, começando pelo Campeonato Pernambucano e avançando para outras competições estaduais conforme disponibilidade documental, qualidade dos dados e capacidade operacional.
 
-A expansão nacional será conduzida progressivamente.
+### 3.3 Initial pilot
 
-| Phase | Competitions / States | Objective |
-|---|---|---|
-| Phase 1 | Campeonato Pernambucano | Initial pilot and methodology validation |
-| Phase 2 | Ceará, Bahia and Paraíba | Regional expansion |
-| Phase 3 | Pará | Expansion to the North region |
-| Phase 4 | São Paulo and Rio de Janeiro | Expansion to major national competitions |
+O Campeonato Pernambucano será utilizado como piloto inicial para validação da metodologia, do padrão de dados e dos processos de coleta e análise.
 
-The expansion sequence may be revised according to document availability, data quality, operational capacity and institutional partnerships.
+A utilização de uma competição como piloto não limita a abrangência nacional do observatório.
 
 ## 4. Inclusion criteria
 
-A match may be included in the OFE dataset when it satisfies the following conditions:
+Uma partida poderá ser incluída na base do OFE quando atender às seguintes condições:
 
-1. It belongs to an official professional competition included in the observatory's scope.
-2. It has an identifiable match record.
-3. An official financial document, preferably a borderô, is available or can be obtained from an official source.
-4. Financial information can be associated with the respective match.
-5. The source and its provenance can be documented.
+1. Pertencer a uma competição estadual oficial de futebol profissional, masculina ou feminina, abrangida pelo observatório.
+2. Possuir registro identificável da partida.
+3. Ter documento financeiro oficial disponível ou obtível junto a uma fonte oficial.
+4. Permitir associar as informações financeiras à respectiva partida.
+5. Possuir fonte e procedência documental registráveis.
 
-The existence of a document does not automatically mean that all its information is eligible for every indicator.
+A existência de um documento não significa que todas as suas informações sejam elegíveis para todos os indicadores.
 
 ## 5. Exclusion criteria
 
-The following items are outside the initial scope:
+Estão fora do escopo:
 
-- National and regional competitions, including Campeonato Brasileiro, Copa do Brasil, Copa do Nordeste and Copa Verde.
-- Friendly matches and preseason events.
-- Financial estimates without verifiable supporting documentation.
-- General club revenues not directly attributable to a match, such as general broadcasting or sponsorship revenues not reported in the event's financial document.
-- Records whose association with a specific match cannot be established.
+- Competições nacionais e regionais, incluindo Campeonato Brasileiro, Copa do Brasil, Copa do Nordeste e Copa Verde.
+- Partidas amistosas e eventos de pré-temporada.
+- Estimativas financeiras sem documentação verificável.
+- Receitas gerais dos clubes que não possam ser atribuídas diretamente a uma partida.
+- Registros cuja associação com uma partida específica não possa ser estabelecida.
 
-Exclusion from the analytical dataset does not imply deletion of the original source or its collection history.
+A exclusão da base analítica não implica a eliminação da fonte original ou de seu histórico de coleta.
 
 ## 6. Data sources
 
 ### 6.1 Primary sources
 
-The primary source is the official financial document of the match, especially the borderô published by the relevant federation or competition organizer.
+A fonte primária é o documento financeiro oficial da partida, especialmente o borderô publicado pela federação ou pelo organizador da competição.
 
 ### 6.2 Supporting sources
 
-Additional sources may be used to identify or contextualize information, including:
+Fontes adicionais poderão ser utilizadas para identificar ou contextualizar informações, incluindo:
 
-- Official federation publications.
-- Official competition regulations.
-- Stadium information and capacity documentation.
-- Official club communications.
-- Other institutional publications relevant to the match.
+- Publicações oficiais das federações.
+- Regulamentos oficiais das competições.
+- Documentação sobre estádios e capacidade.
+- Comunicados oficiais dos clubes.
+- Outras publicações institucionais relevantes para a partida.
 
-Supporting sources must be identified separately from the primary financial document.
+As fontes complementares devem ser identificadas separadamente do documento financeiro primário.
 
 ### 6.3 Source preservation
 
-Whenever legally and technically possible, the original document must be preserved.
+Sempre que legal e tecnicamente possível, o documento original deverá ser preservado.
 
-The observatory must maintain traceability between published information and its original source.
+O observatório deverá manter rastreabilidade entre as informações publicadas e suas fontes originais.
 
 ## 7. Data classification
 
-The OFE distinguishes four information layers:
+O OFE distingue quatro camadas de informação:
 
 ### 7.1 Original data
 
-Values and descriptions exactly as presented in the source document.
+Valores e descrições exatamente como apresentados no documento de origem.
 
 ### 7.2 Normalized data
 
-Values mapped to the OFC Borderô Data Standard, including standardized labels, categories, units and formats.
+Valores mapeados para o OFC Borderô Data Standard, incluindo rótulos, categorias, unidades e formatos padronizados.
 
-Original values must remain preserved.
+Os valores originais devem permanecer preservados.
 
 ### 7.3 Derived data
 
-Indicators and calculations produced from normalized data according to the OFE Financial Indicators Dictionary.
+Indicadores e cálculos produzidos a partir dos dados normalizados, de acordo com o OFE Financial Indicators Dictionary.
 
 ### 7.4 Interpretations
 
-Analytical observations, comparisons, anomaly alerts and editorial conclusions produced by the OFC.
+Observações analíticas, comparações, alertas de anomalia e conclusões editoriais produzidas pelo OFC.
 
-These layers must remain distinguishable in the data pipeline and in published analyses.
+Essas camadas devem permanecer distinguíveis no fluxo de dados e nas análises publicadas.
 
 ## 8. Data quality and analytical eligibility
 
 ### 8.1 Missing information
 
-Missing information must be represented as null, not zero.
+Informações ausentes devem ser representadas como `null`, nunca como zero.
 
-A zero value is valid only when the source explicitly reports zero or when a documented and validated derivation produces zero.
+O valor zero só é válido quando explicitamente informado pela fonte ou quando resultar de derivação documentada e validada.
 
 ### 8.2 Inconsistencies
 
-When information is inconsistent, the original values must be preserved and the inconsistency documented.
+Quando houver inconsistências, os valores originais devem ser preservados e a divergência documentada.
 
-Examples include:
+Exemplos:
 
-- Attendance components that do not reconcile with declared total attendance.
-- Differences between reported gross revenue, expenses, deductions and net revenue.
-- Missing or ambiguous financial categories.
-- Conflicting values between different versions of an official document.
+- Componentes de público que não correspondem ao público total declarado.
+- Diferenças entre renda bruta, despesas, deduções e renda líquida.
+- Categorias financeiras ausentes ou ambíguas.
+- Valores conflitantes entre versões diferentes de um documento oficial.
 
 ### 8.3 Indicator-specific eligibility
 
-Eligibility must be evaluated independently for each indicator.
+A elegibilidade deve ser avaliada individualmente para cada indicador.
 
-The absence of stadium capacity, for example, prevents calculation of occupancy but does not necessarily prevent calculation of retention margin.
+A ausência da capacidade do estádio, por exemplo, impede o cálculo da taxa de ocupação, mas não necessariamente o cálculo da margem de retenção.
 
-Likewise, missing paying attendance prevents calculation of revenue per paying attendee but does not automatically invalidate other indicators.
+Da mesma forma, a ausência do público pagante impede o cálculo da receita bruta por pagante, mas não invalida automaticamente outros indicadores.
 
 ### 8.4 Structural incompleteness
 
-A match may be classified as structurally incomplete when essential information is absent or when the source contains unresolved inconsistencies that compromise the reliability of the affected financial calculations.
+Uma partida poderá ser classificada como estruturalmente incompleta quando informações essenciais estiverem ausentes ou quando houver inconsistências não resolvidas que comprometam a confiabilidade dos cálculos financeiros afetados.
 
-The affected indicators must be marked as ineligible, with an explicit reason.
+Os indicadores comprometidos devem ser marcados como inelegíveis, acompanhados de uma justificativa explícita.
 
 ## 9. Comparability principles
 
-Comparisons must consider differences in:
+As comparações devem considerar diferenças de:
 
-- Competition and season.
-- Document structure and accounting conventions.
-- Classification of revenue and expense categories.
-- Attendance counting practices.
-- Stadium capacity and configuration.
-- Restrictions on attendance, including closed-door matches and sanctions.
-- Availability and completeness of financial information.
+- Competição e temporada.
+- Estrutura documental e convenções contábeis.
+- Classificação de receitas e despesas.
+- Práticas de contabilização de público.
+- Capacidade e configuração dos estádios.
+- Restrições de público, incluindo portões fechados e sanções.
+- Disponibilidade e completude das informações financeiras.
 
-Comparisons should use equivalent data definitions and eligible samples.
+As comparações devem utilizar definições de dados equivalentes e amostras elegíveis.
 
-When conditions differ materially, the OFE must disclose the limitation or present results in separate groups.
+Quando as condições diferirem materialmente, o OFE deverá explicitar a limitação ou apresentar os resultados em grupos separados.
+
+### 9.1 Gender and competition comparability
+
+Os dados de competições masculinas e femininas integram o mesmo escopo institucional e padrão de dados.
+
+Entretanto, sua comparação direta não deve pressupor equivalência de contexto econômico, operacional ou de público.
+
+Análises comparativas entre essas competições devem explicitar diferenças relevantes de competição, infraestrutura, calendário, público, receitas, despesas e disponibilidade documental.
 
 ## 10. Coverage and transparency
 
-The OFE must distinguish at least the following quantities:
+O OFE deverá distinguir, no mínimo:
 
-- Total matches in the competition.
-- Matches for which an official document was located.
-- Matches with an ingested document.
-- Matches with validated financial information.
-- Matches eligible for each published indicator.
+- Total de partidas da competição.
+- Partidas para as quais um documento oficial foi localizado.
+- Partidas com documento ingerido.
+- Partidas com informações financeiras validadas.
+- Partidas elegíveis para cada indicador publicado.
 
-Coverage information must accompany aggregate reports whenever relevant.
+As informações de cobertura deverão acompanhar os relatórios agregados sempre que relevantes.
 
-A competition-level average must identify the number of matches effectively used in its calculation.
+Uma média por competição deverá identificar a quantidade de partidas efetivamente utilizada no cálculo.
 
 ## 11. Publications
 
-The OFE may publish:
+O OFE poderá publicar:
 
-- Match-level financial records.
-- Periodic competition bulletins.
-- Comparative financial analyses.
-- Competition-level summaries.
-- Season reports.
-- Methodological notes and data quality reports.
+- Registros financeiros por partida.
+- Boletins periódicos de competições.
+- Análises financeiras comparativas.
+- Resumos por competição.
+- Relatórios por temporada.
+- Notas metodológicas e relatórios de qualidade dos dados.
 
-Publications must identify their data sources, methodological version, analytical period, coverage and limitations.
+As publicações deverão identificar suas fontes, versão metodológica, período de análise, cobertura e limitações.
 
 ## 12. Institutional responsibilities
 
-The Open Football Compliance is responsible for:
+O Open Football Compliance é responsável por:
 
-- Defining the observatory's scope.
-- Establishing the financial methodology.
-- Governing the data standards and indicator definitions.
-- Reviewing analytical interpretations.
-- Approving institutional publications.
+- Definir o escopo do observatório.
+- Estabelecer a metodologia financeira.
+- Governar os padrões de dados e as definições dos indicadores.
+- Revisar as interpretações analíticas.
+- Aprovar as publicações institucionais.
 
-Technology providers may develop systems and services for ingestion, extraction, normalization, validation, storage and distribution of data.
+Provedores de tecnologia poderão desenvolver sistemas e serviços para ingestão, extração, normalização, validação, armazenamento e distribuição dos dados.
 
-Technical implementation does not transfer institutional governance of the OFE methodology or standards to the technology provider.
+A implementação técnica não transfere ao provedor de tecnologia a governança institucional da metodologia ou dos padrões do OFE.
 
-## 13. Initial implementation roadmap
+## 13. Related documents
 
-| Period | Main activity |
-|---|---|
-| November–December 2026 | Methodology, data standard and historical pilot preparation |
-| January 2027 | Public launch of the OFE and monitoring of the Pernambuco championship |
-| January–March 2027 | Collection, validation and periodic publication |
-| Following phases | Expansion to additional state championships |
+- `financial-indicators-dictionary.md` — definições formais e regras de cálculo dos indicadores financeiros.
+- `bordero-data-standard.md` — contrato canônico de dados para documentos financeiros de partidas.
+- `schemas/bordero.schema.json` — esquema de validação legível por máquina.
+- `catalogs/financial-categories.json` — catálogo de categorias financeiras.
 
-Collection and preparation activities should begin before the public launch, using available historical and current-season documents to validate the methodology and technical pipeline.
-
-## 14. Related documents
-
-- `financial-indicators-dictionary-v0.1.md` — formal definitions and calculation rules for financial indicators.
-- `bordero-data-standard-v0.1.md` — canonical data contract for match financial documents.
-- `bordero-v0.1.schema.json` — machine-readable validation schema.
-- `financial-categories-v0.1.json` — initial financial category catalog.
-
-## 15. Version history
+## 14. Version history
 
 | Version | Date | Description |
 |---|---|---|
 | 0.1 | November 2026 | Initial scope specification |
+| 1.0.0 | November 2026 | Consolidation of scope, inclusion of men's and women's professional state competitions, and clarification of comparability principles |
