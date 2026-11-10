@@ -749,6 +749,41 @@
             "string",
             "null"
           ]
+        },
+        "declared_source_sections": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Totals transcribed by original document section; these are source-layout totals and are not equivalent to OFC financial-class totals.",
+          "properties": {
+            "b1_minor": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "b2_minor": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "b3_minor": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "total_expenses_minor": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            }
+          }
         }
       }
     },
