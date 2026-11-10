@@ -85,7 +85,9 @@ O registro canônico de uma partida é composto pelos seguintes blocos:
 | `match` | Identificação e contexto da partida |
 | `documents` | Documento(s) oficial(is) e versões |
 | `attendance` | Totais e categorias de público |
-| `financial_items` | Rubricas financeiras individuais |
+| `ticket_sales` | Disponibilidade, devoluções, vendas, preços e arrecadação por linha de ingresso |
+| `revenue_distribution` | Rateio da renda líquida entre clubes ou beneficiários |
+| `financial_items` | Rubricas financeiras individuais, incluindo a seção original do documento |
 | `financial_summary` | Totais declarados e valores calculados |
 | `extraction_records` | Execuções de extração, revisão e validação |
 | `evidence` | Referências às evidências no documento |
@@ -153,6 +155,39 @@ O bloco `attendance` contém os números de público informados no documento.
 
 Cada categoria deve preservar `source_label`, podendo incluir `normalized_category` e `quantity`.
 
+## 8. Ticket sales
+
+O bloco `ticket_sales` representa cada linha da tabela de ingressos do borderô, sem confundi-la com público efetivamente presente. Cada linha deve preservar:
+
+- `ticket_line_id`: identificador único da linha;
+- `document_id`: documento de origem;
+- `source_label`: descrição integral apresentada na coluna de localização/modalidade;
+- `sector`: setor ou localização, quando separável com segurança;
+- `ticket_type`: tipo de ingresso, por exemplo inteira ou meia, quando identificável;
+- `admission_category`: categoria como sócio, credenciamento ou gratuidade, quando identificável;
+- `available_quantity`, `returned_quantity` e `sold_quantity`;
+- `unit_price_minor` e `proceeds_minor`, em centavos de BRL;
+- `currency` e `evidence_id`.
+
+Quantidades e arrecadação devem ser preservadas como declaradas. Não presumir que ingressos vendidos equivalem a público pagante ou público presente. Linhas com preço zero, como gratuidades e credenciamentos, permanecem no detalhamento e não devem ser automaticamente descartadas. A soma de arrecadação por linha deve ser comparada ao total da tabela, gerando divergência quando não fechar.
+
+## 9. Revenue distribution
+
+O bloco `revenue_distribution` representa a distribuição da renda líquida declarada entre clubes ou outros beneficiários. Cada registro pode conter:
+
+- `distribution_id` e `document_id`;
+- `beneficiary_name` e `beneficiary_tax_id`, quando disponível;
+- `share_percentage`;
+- `discount_minor`;
+- `net_payable_minor`;
+- `currency` e `evidence_id`.
+
+A distribuição não altera retroativamente a receita bruta nem as despesas da partida. Os valores devem ser preservados como declarados e não devem ser confundidos com receita reconhecida contabilmente pelo clube. A soma dos percentuais e dos valores líquidos deve ser verificada contra o total distribuído, mas divergências devem ser registradas, não corrigidas automaticamente.
+
+## 10. Financial items
+
+Cada rubrica individual deve ser representada em `financial_items`.
+
 Não derivar público não pagante ou total sem registrar a fórmula e os valores de origem. Cortesias, gratuidades, credenciais e categorias similares devem manter o rótulo original; o enquadramento como pagante ou não pagante depende do significado documentado.
 
 Quantidades devem ser inteiros não negativos. Divergências entre totais e componentes devem gerar aviso ou erro de validação, sem sobrescrever os valores da fonte.
@@ -166,6 +201,7 @@ Cada rubrica individual deve ser representada em `financial_items`.
 | `item_id` | string | Required | Identificador do item no registro |
 | `document_id` | string | Required | Documento de origem |
 | `source_label` | string | Required | Rótulo original |
+| `source_section` | string/null | Optional | Seção original do borderô, por exemplo B1, B2 ou B3 |
 | `normalized_label` | string/null | Optional | Rótulo normalizado |
 | `financial_class` | string | Required | Classe financeira |
 | `canonical_category` | string/null | Optional | Código do catálogo OFC |
@@ -200,7 +236,7 @@ Valores permitidos:
 - `informational_only`
 - `unclassified`
 
-A classe descreve a natureza da rubrica; o papel indica se e como ela participa dos totais metodológicos. Combinações incompatíveis devem ser rejeitadas na validação.
+`source_section` preserva a organização visual do documento e não determina a classificação financeira. A classe descreve a natureza da rubrica; o papel indica se e como ela participa dos totais metodológicos. Uma rubrica apresentada em B3, por exemplo, não é automaticamente uma despesa operacional se sua natureza for tributária ou permanecer ambígua. Combinações incompatíveis devem ser rejeitadas na validação.
 
 ### 8.3 Amount convention
 
@@ -217,7 +253,7 @@ Valores iniciais:
 
 Uma rubrica não mapeada deve utilizar `financial_class: unknown`, `accounting_role: unclassified` e `canonical_category: null`.
 
-## 9. Financial summary
+## 11. Financial summary
 
 O bloco `financial_summary` preserva totais declarados pela fonte e valores calculados pelo processo de normalização.
 
@@ -252,7 +288,7 @@ Diferenças entre totais declarados e calculados devem ser registradas em `diffe
 
 O resultado líquido metodológico do OFE é derivado conforme o OFE Financial Indicators Dictionary, considerando receita bruta, despesas operacionais, tributos, taxas, outras deduções incluídas e ajustes validados. Ele não deve ser confundido com `net_revenue_minor` declarado pela fonte.
 
-## 10. Extraction records
+## 12. Extraction records
 
 Cada execução de extração ou revisão deve ser registrada em `extraction_records`.
 
@@ -270,7 +306,7 @@ Campos principais:
 
 Confiança de extração, confiança de classificação, validação estrutural e revisão humana são dimensões distintas.
 
-## 11. Evidence and provenance
+## 13. Evidence and provenance
 
 O bloco `evidence` registra a origem de informações extraídas. Cada evidência deve conter:
 - `evidence_id`
@@ -286,7 +322,7 @@ O `bounding_box` deve usar coordenadas normalizadas entre 0 e 1, relativas à p�
 
 Dados críticos sem evidência localizável devem possuir justificativa explícita. Correções manuais devem ser registradas.
 
-## 12. Normalization and mapping
+## 14. Normalization and mapping
 
 A normalização deve utilizar o catálogo de categorias financeiras do OFC e preservar o rótulo original.
 
@@ -300,7 +336,7 @@ O mapeamento entre rótulos da fonte e categorias canônicas deve considerar:
 
 A primeira versão considera um modelo documental de referência comum. Portanto, o trabalho de mapeamento deve priorizar diferenças de nomenclatura, disponibilidade, agrupamento e significado das rubricas dentro dessa estrutura. Não se presume equivalência semântica apenas porque dois campos ocupam posição semelhante no documento.
 
-## 13. Validation rules
+## 15. Validation rules
 
 ### 13.1 Structural
 
@@ -336,7 +372,7 @@ A primeira versão considera um modelo documental de referência comum. Portanto
 - Versões retificadas devem preservar a versão anterior.
 - Alterações manuais devem ser registradas.
 
-## 14. Conformance
+## 16. Conformance
 
 Uma implementação declara conformidade com o OFC Borderô Data Standard v1.0.0 quando:
 1. Produz o registro canônico definido neste documento.
@@ -350,7 +386,7 @@ Uma implementação declara conformidade com o OFC Borderô Data Standard v1.0.0
 
 Conformidade estrutural não certifica a veracidade contábil da fonte nem garante que todos os indicadores sejam elegíveis.
 
-## 15. Related documents
+## 17. Related documents
 
 - `ofe-scope.md` — escopo do Observatório Financeiro dos Estaduais.
 - `financial-indicators-dictionary.md` — fórmulas, definições e elegibilidade dos indicadores.
@@ -358,9 +394,9 @@ Conformidade estrutural não certifica a veracidade contábil da fonte nem garan
 - `catalogs/financial-categories.json` — catálogo de classes e categorias.
 - `examples/match-example.json` — exemplo de registro canônico.
 
-## 16. Version history
+## 18. Version history
 
 | Version | Date | Description |
 |---|---|---|
 | 0.1 | November 2026 | Initial canonical data model |
-| 1.0.0 | November 2026 | Restricted initial document scope, clarified canonical entities, monetary representation, financial classification and provenance |
+| 1.0.0 | November 2026 | Restricted initial document scope; added ticket sales and revenue distribution; preserved original source sections independently from financial classification |
