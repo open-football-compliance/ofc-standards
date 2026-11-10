@@ -1,5 +1,4 @@
 {
-  "_comment": "Exemplo ilustrativo. Valores financeiros e de público representam os totais de referência disponíveis para a partida; metadados documentais não disponíveis permanecem null. collection_timestamp é a data ilustrativa de montagem deste exemplo, não a data histórica de coleta.",
   "schema_version": "1.0.0",
   "match": {
     "match_id": "PE-2026-NAU-SPO-AFLITOS",
