@@ -476,7 +476,7 @@
   ],
   "financial_items": [
     {
-      "item_id": "FIN-B1-001",
+      "item_id": "B1-001",
       "document_id": "DOC-FPF-21181",
       "source_label": "SEGURO TORCEDOR",
       "source_section": "B1 - ALUGUÉIS E SEGUROS",
@@ -487,11 +487,11 @@
       "currency": "BRL",
       "accounting_role": "operating_expense_component",
       "evidence_id": null,
-      "classification_status": "manually_reviewed",
-      "notes": "Classificação operacional proposta pela natureza descrita; confirmar com regra de mapeamento institucional."
+      "classification_status": "mapped",
+      "notes": "Seguro diretamente associado à partida."
     },
     {
-      "item_id": "FIN-B2-001",
+      "item_id": "B2-001",
       "document_id": "DOC-FPF-21181",
       "source_label": "5% - FEDERAÇÃO LOCAL",
       "source_section": "B2 - TAXAS E IMPOSTOS",
@@ -502,11 +502,11 @@
       "currency": "BRL",
       "accounting_role": "fee_component",
       "evidence_id": null,
-      "classification_status": "manually_reviewed",
-      "notes": "Rubrica identificada como taxa federativa."
+      "classification_status": "mapped",
+      "notes": "Taxa identificada no próprio rótulo."
     },
     {
-      "item_id": "FIN-B2-002",
+      "item_id": "B2-002",
       "document_id": "DOC-FPF-21181",
       "source_label": "5% - INSS [RENDA BRUTA]",
       "source_section": "B2 - TAXAS E IMPOSTOS",
@@ -518,10 +518,10 @@
       "accounting_role": "tax_component",
       "evidence_id": null,
       "classification_status": "manually_reviewed",
-      "notes": "Classificação provisória como encargo legal; validar tratamento metodológico e eventual sobreposição com outras rubricas."
+      "notes": "Classificação metodológica como encargo tributário/previdenciário; validar enquadramento contábil antes de comparações externas."
     },
     {
-      "item_id": "FIN-B3-001",
+      "item_id": "B3-001",
       "document_id": "DOC-FPF-21181",
       "source_label": "20% - INSS SOBRE A REMUNERAÇÃO DA ARBITRAGEM, AUXILIARES E FISCAIS",
       "source_section": "B3 - DESPESAS OPERACIONAIS",
@@ -533,25 +533,85 @@
       "accounting_role": "tax_component",
       "evidence_id": null,
       "classification_status": "manually_reviewed",
-      "notes": "Classificado provisoriamente pela natureza indicada no rótulo, apesar de aparecer em B3. Requer validação metodológica."
+      "notes": "Classificado pela natureza indicada no rótulo, embora apareça na seção B3."
     },
     {
-      "item_id": "FIN-B3-002",
+      "item_id": "B3-002",
       "document_id": "DOC-FPF-21181",
       "source_label": "ARBITRAGEM, AUXILIARES E FISCAIS",
       "source_section": "B3 - DESPESAS OPERACIONAIS",
       "normalized_label": "Serviços de arbitragem, auxiliares e fiscais",
       "financial_class": "operating_expense",
-      "canonical_category": "EXP-OTHER",
+      "canonical_category": "EXP-REFEREE",
       "amount_minor": 2198000,
       "currency": "BRL",
       "accounting_role": "operating_expense_component",
       "evidence_id": null,
-      "classification_status": "manually_reviewed",
-      "notes": "Despesa por serviços de arbitragem; avaliar categoria específica em revisão futura."
+      "classification_status": "mapped",
+      "notes": "Remuneração dos serviços de arbitragem."
     },
     {
-      "item_id": "FIN-B3-003",
+      "item_id": "B3-003",
+      "document_id": "DOC-FPF-21181",
+      "source_label": "CONFECÇÃO DE INGRESSOS - FUTEBOL CARD",
+      "source_section": "B3 - DESPESAS OPERACIONAIS",
+      "normalized_label": "Confecção de ingressos",
+      "financial_class": "operating_expense",
+      "canonical_category": "EXP-TICKETING",
+      "amount_minor": 547227,
+      "currency": "BRL",
+      "accounting_role": "operating_expense_component",
+      "evidence_id": null,
+      "classification_status": "mapped",
+      "notes": "Custo de produção de ingressos."
+    },
+    {
+      "item_id": "B3-004",
+      "document_id": "DOC-FPF-21181",
+      "source_label": "COORDENADORES / ORGANIZADORES",
+      "source_section": "B3 - DESPESAS OPERACIONAIS",
+      "normalized_label": "Coordenadores e organizadores",
+      "financial_class": "operating_expense",
+      "canonical_category": "EXP-STAFF",
+      "amount_minor": 254000,
+      "currency": "BRL",
+      "accounting_role": "operating_expense_component",
+      "evidence_id": null,
+      "classification_status": "mapped",
+      "notes": "Pessoal de coordenação e organização da partida."
+    },
+    {
+      "item_id": "B3-005",
+      "document_id": "DOC-FPF-21181",
+      "source_label": "EQUIPE DE APOIO",
+      "source_section": "B3 - DESPESAS OPERACIONAIS",
+      "normalized_label": "Equipe de apoio",
+      "financial_class": "operating_expense",
+      "canonical_category": "EXP-STAFF",
+      "amount_minor": 813000,
+      "currency": "BRL",
+      "accounting_role": "operating_expense_component",
+      "evidence_id": null,
+      "classification_status": "mapped",
+      "notes": "Equipe operacional de apoio."
+    },
+    {
+      "item_id": "B3-006",
+      "document_id": "DOC-FPF-21181",
+      "source_label": "EQUIPE DE ORIENTADORES",
+      "source_section": "B3 - DESPESAS OPERACIONAIS",
+      "normalized_label": "Equipe de orientadores",
+      "financial_class": "operating_expense",
+      "canonical_category": "EXP-STAFF",
+      "amount_minor": 369000,
+      "currency": "BRL",
+      "accounting_role": "operating_expense_component",
+      "evidence_id": null,
+      "classification_status": "mapped",
+      "notes": "Equipe de orientação de público."
+    },
+    {
+      "item_id": "B3-007",
       "document_id": "DOC-FPF-21181",
       "source_label": "INGRESSO PROMOCIONAL",
       "source_section": "B3 - DESPESAS OPERACIONAIS",
@@ -563,14 +623,119 @@
       "accounting_role": "unclassified",
       "evidence_id": null,
       "classification_status": "unclassified",
-      "notes": "Natureza econômica não determinável apenas pelo rótulo. Excluído de totais metodológicos até esclarecimento."
+      "notes": "A rubrica não permite identificar se representa desconto, subsídio, receita cedida, ação promocional ou despesa. Não classificar sem documentação complementar."
+    },
+    {
+      "item_id": "B3-008",
+      "document_id": "DOC-FPF-21181",
+      "source_label": "LIMPEZA E CONSERVAÇÃO",
+      "source_section": "B3 - DESPESAS OPERACIONAIS",
+      "normalized_label": "Limpeza e conservação",
+      "financial_class": "operating_expense",
+      "canonical_category": "EXP-CLEANING",
+      "amount_minor": 315000,
+      "currency": "BRL",
+      "accounting_role": "operating_expense_component",
+      "evidence_id": null,
+      "classification_status": "mapped",
+      "notes": "Serviços de limpeza e conservação."
+    },
+    {
+      "item_id": "B3-009",
+      "document_id": "DOC-FPF-21181",
+      "source_label": "LOCAÇÃO DE EQUIPAMENTOS",
+      "source_section": "B3 - DESPESAS OPERACIONAIS",
+      "normalized_label": "Locação de equipamentos",
+      "financial_class": "operating_expense",
+      "canonical_category": "EXP-EQUIPMENT",
+      "amount_minor": 1250574,
+      "currency": "BRL",
+      "accounting_role": "operating_expense_component",
+      "evidence_id": null,
+      "classification_status": "mapped",
+      "notes": "Locação de equipamentos para a partida."
+    },
+    {
+      "item_id": "B3-010",
+      "document_id": "DOC-FPF-21181",
+      "source_label": "LOCAÇÃO DE GRADES",
+      "source_section": "B3 - DESPESAS OPERACIONAIS",
+      "normalized_label": "Locação de grades",
+      "financial_class": "operating_expense",
+      "canonical_category": "EXP-BARRIERS",
+      "amount_minor": 1355000,
+      "currency": "BRL",
+      "accounting_role": "operating_expense_component",
+      "evidence_id": null,
+      "classification_status": "mapped",
+      "notes": "Locação de grades para organização e controle de público."
+    },
+    {
+      "item_id": "B3-011",
+      "document_id": "DOC-FPF-21181",
+      "source_label": "OUTRAS DESPESAS",
+      "source_section": "B3 - DESPESAS OPERACIONAIS",
+      "normalized_label": "Outras despesas operacionais",
+      "financial_class": "operating_expense",
+      "canonical_category": "EXP-OTHER",
+      "amount_minor": 786437,
+      "currency": "BRL",
+      "accounting_role": "operating_expense_component",
+      "evidence_id": null,
+      "classification_status": "manually_reviewed",
+      "notes": "Rubrica genérica declarada dentro do bloco de despesas operacionais; a composição não está discriminada."
+    },
+    {
+      "item_id": "B3-012",
+      "document_id": "DOC-FPF-21181",
+      "source_label": "POSTO MÉDICO, EQUIPE MÉDICA E AMBULÂNCIA",
+      "source_section": "B3 - DESPESAS OPERACIONAIS",
+      "normalized_label": "Serviços médicos e de emergência",
+      "financial_class": "operating_expense",
+      "canonical_category": "EXP-MEDICAL-EMERGENCY",
+      "amount_minor": 1111500,
+      "currency": "BRL",
+      "accounting_role": "operating_expense_component",
+      "evidence_id": null,
+      "classification_status": "mapped",
+      "notes": "Rubrica agrupada; os componentes não podem ser separados com a informação disponível."
+    },
+    {
+      "item_id": "B3-013",
+      "document_id": "DOC-FPF-21181",
+      "source_label": "SEGURANÇA PRIVADA",
+      "source_section": "B3 - DESPESAS OPERACIONAIS",
+      "normalized_label": "Segurança privada",
+      "financial_class": "operating_expense",
+      "canonical_category": "EXP-SECURITY",
+      "amount_minor": 5255000,
+      "currency": "BRL",
+      "accounting_role": "operating_expense_component",
+      "evidence_id": null,
+      "classification_status": "mapped",
+      "notes": "Serviços de segurança privada."
+    },
+    {
+      "item_id": "B3-014",
+      "document_id": "DOC-FPF-21181",
+      "source_label": "TRANSPORTE E HOSPEDAGEM DA ARBITRAGEM",
+      "source_section": "B3 - DESPESAS OPERACIONAIS",
+      "normalized_label": "Transporte e hospedagem da arbitragem",
+      "financial_class": "operating_expense",
+      "canonical_category": "EXP-LOGISTICS",
+      "amount_minor": 909720,
+      "currency": "BRL",
+      "accounting_role": "operating_expense_component",
+      "evidence_id": null,
+      "classification_status": "mapped",
+      "notes": "Logística diretamente relacionada à equipe de arbitragem."
     }
   ],
   "financial_summary": {
     "currency": "BRL",
     "declared": {
       "gross_revenue_minor": 56974650,
-      "operating_expenses_minor": 24586558,
+      "operating_expenses_minor": null,
       "taxes_minor": null,
       "fees_minor": null,
       "deductions_minor": null,
@@ -578,7 +743,7 @@
       "net_revenue_minor": 26658447
     },
     "calculated": {
-      "gross_revenue_minor": null,
+      "gross_revenue_minor": 56974650,
       "operating_expenses_minor": null,
       "taxes_minor": null,
       "fees_minor": null,
@@ -587,7 +752,13 @@
       "net_revenue_minor": null
     },
     "calculation_status": "partial",
-    "difference_notes": "O documento declara B1 R$ 321,79; B2 R$ 56.974,66; B3 R$ 245.865,58; total das despesas R$ 303.162,03; renda líquida R$ 266.584,47. O detalhamento completo das rubricas não foi estruturado em financial_items neste exemplo. O total de B2 combina taxa federativa e INSS; os subtotais por rubrica foram transcritos, mas não há um total declarado separado por classe metodológica."
+    "difference_notes": "A soma dos valores por seção (B1 R$ 321,79 + B2 R$ 56.974,66 + B3 R$ 245.865,58) fecha com o total declarado de despesas de R$ 303.162,03. A receita bruta é R$ 569.746,50 e a renda líquida declarada é R$ 266.584,47. Os totais por seção são preservados separadamente dos totais por classe financeira. A rubrica INGRESSO PROMOCIONAL (R$ 89.825,00) permanece não classificada; por isso, não é possível fechar o resultado líquido metodológico sem hipótese não comprovada.",
+    "declared_source_sections": {
+      "b1_minor": 32179,
+      "b2_minor": 5697466,
+      "b3_minor": 24586558,
+      "total_expenses_minor": 30316203
+    }
   },
   "revenue_distribution": [
     {
