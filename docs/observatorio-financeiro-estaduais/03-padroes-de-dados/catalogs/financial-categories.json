@@ -404,6 +404,56 @@
         "Seguro torcedor",
         "Seguro da partida"
       ]
+    },
+    {
+      "code": "EXP-REFEREE",
+      "name": "Refereeing Services",
+      "financial_class": "operating_expense",
+      "accounting_role": "operating_expense_component",
+      "description": "Serviços de arbitragem, auxiliares e fiscais quando apresentados como remuneração do serviço, não como taxa federativa.",
+      "examples": [
+        "ARBITRAGEM, AUXILIARES E FISCAIS"
+      ]
+    },
+    {
+      "code": "EXP-TICKETING",
+      "name": "Ticket Production",
+      "financial_class": "operating_expense",
+      "accounting_role": "operating_expense_component",
+      "description": "Confecção, impressão e produção física de ingressos.",
+      "examples": [
+        "CONFECÇÃO DE INGRESSOS"
+      ]
+    },
+    {
+      "code": "EXP-EQUIPMENT",
+      "name": "Equipment Rental",
+      "financial_class": "operating_expense",
+      "accounting_role": "operating_expense_component",
+      "description": "Locação de equipamentos para a operação da partida.",
+      "examples": [
+        "LOCAÇÃO DE EQUIPAMENTOS"
+      ]
+    },
+    {
+      "code": "EXP-BARRIERS",
+      "name": "Crowd-Control Barriers",
+      "financial_class": "operating_expense",
+      "accounting_role": "operating_expense_component",
+      "description": "Locação de grades e estruturas de contenção e organização de público.",
+      "examples": [
+        "LOCAÇÃO DE GRADES"
+      ]
+    },
+    {
+      "code": "EXP-MEDICAL-EMERGENCY",
+      "name": "Medical and Emergency Services",
+      "financial_class": "operating_expense",
+      "accounting_role": "operating_expense_component",
+      "description": "Serviços agrupados de posto médico, equipe médica e ambulância quando a fonte não discrimina os componentes.",
+      "examples": [
+        "POSTO MÉDICO, EQUIPE MÉDICA E AMBULÂNCIA"
+      ]
     }
   ]
 }
