@@ -46,4 +46,14 @@ Contribuições, sugestões e propostas de alteração devem ser apresentadas po
 
 ## 7. Licença
 
-A licença aplicável aos documentos e artefatos deste repositório será definida conforme a política de publicação do Open Football Compliance.
+Unless otherwise stated, documentation, specifications,
+data schemas and catalogs in this repository are licensed
+under the Creative Commons Attribution 4.0 International
+(CC BY 4.0).
+
+To the extent applicable, software source code distributed
+in this repository is licensed under GNU General Public
+License v3.0 (GPL-3.0).
+
+The OFC name, logos and trademarks are not granted under
+these licenses.
