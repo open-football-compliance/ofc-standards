@@ -264,6 +264,7 @@ A elegibilidade é avaliada por indicador e por partida.
 | Público total | Despesa operacional por torcedor, participação de não pagantes e ocupação |
 | Despesas operacionais | Despesa operacional por torcedor, resultado metodológico e margem de retenção |
 | Tributos ou taxas sem identificação suficiente | Peso de tributos e taxas; resultado metodológico e margem de retenção quando forem componentes relevantes e não puderem ser quantificados |
+| Rubrica material não classificada, como item promocional sem natureza esclarecida | Resultado metodológico e margem de retenção, quando não for possível determinar seu tratamento |
 | Outras deduções relevantes sem classificação | Resultado metodológico e margem de retenção |
 | Capacidade utilizável do estádio | Taxa de ocupação |
 | Custos fixos ou receitas atribuíveis insuficientes | Ponto de equilíbrio estimado |
@@ -355,7 +356,7 @@ Valores declarados e calculados devem ser identificados separadamente. Alteraç�
 
 A versão 1.0.0 estabelece uma metodologia inicial para dados financeiros documentados por partida. Sua aplicação depende da qualidade, completude e consistência dos borderôs disponíveis.
 
-A classificação de rubricas pode exigir revisão humana quando os rótulos forem ambíguos ou quando o tratamento variar entre documentos. O OFE não deve inferir a natureza financeira de uma rubrica sem evidência suficiente.
+A classificação de rubricas pode exigir revisão humana quando os rótulos forem ambíguos ou quando o tratamento variar entre documentos. O OFE não deve inferir a natureza financeira de uma rubrica sem evidência suficiente. Se uma rubrica material permanecer não classificada, o resultado líquido metodológico e a margem de retenção não devem ser publicados como valores completos.
 
 Indicadores que dependam de dados ainda não disponíveis de forma consistente, como ponto de equilíbrio de bilheteria, permanecem definidos, mas não são autorizados para publicação regular nesta versão.
 
