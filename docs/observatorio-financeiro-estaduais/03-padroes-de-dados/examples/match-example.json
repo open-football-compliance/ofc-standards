@@ -1,0 +1,93 @@
+{
+  "_comment": "Exemplo ilustrativo. Valores financeiros e de público representam os totais de referência disponíveis para a partida; metadados documentais não disponíveis permanecem null. collection_timestamp é a data ilustrativa de montagem deste exemplo, não a data histórica de coleta.",
+  "schema_version": "1.0.0",
+  "match": {
+    "match_id": "PE-2026-NAU-SPO-AFLITOS",
+    "competition": {
+      "name": "Campeonato Pernambucano",
+      "organizer": null,
+      "state": "Pernambuco",
+      "country": "BR",
+      "competition_type": "state"
+    },
+    "season": "2026",
+    "stage": null,
+    "round": null,
+    "match_date": null,
+    "match_time": null,
+    "home_team": {
+      "name": "Náutico",
+      "normalized_name": "Clube Náutico Capibaribe",
+      "federation_id": null
+    },
+    "away_team": {
+      "name": "Sport",
+      "normalized_name": "Sport Club do Recife",
+      "federation_id": null
+    },
+    "venue": {
+      "name": "Estádio dos Aflitos",
+      "city": "Recife",
+      "state": "Pernambuco",
+      "country": "BR",
+      "usable_capacity": null,
+      "capacity_source": null
+    },
+    "match_status": "played"
+  },
+  "documents": [
+    {
+      "document_id": "DOC-PE-2026-NAU-SPO-001",
+      "document_type": "bordero",
+      "source_organization": null,
+      "source_url": null,
+      "publication_date": null,
+      "collection_timestamp": "2026-11-10T14:00:00-03:00",
+      "original_filename": null,
+      "mime_type": "application/pdf",
+      "file_hash": null,
+      "document_version": null,
+      "official": true
+    }
+  ],
+  "attendance": {
+    "total_attendance": 17661,
+    "paying_attendance": 15609,
+    "non_paying_attendance": 2052,
+    "categories": [],
+    "notes": "Os totais estão disponíveis, mas o detalhamento por categoria não integra este exemplo."
+  },
+  "financial_items": [],
+  "financial_summary": {
+    "currency": "BRL",
+    "declared": {
+      "gross_revenue_minor": 76866800,
+      "operating_expenses_minor": 30962445,
+      "taxes_minor": null,
+      "fees_minor": null,
+      "deductions_minor": null,
+      "adjustments_minor": null,
+      "net_revenue_minor": 45904355
+    },
+    "calculated": {
+      "gross_revenue_minor": null,
+      "operating_expenses_minor": null,
+      "taxes_minor": null,
+      "fees_minor": null,
+      "deductions_minor": null,
+      "adjustments_minor": null,
+      "net_revenue_minor": null
+    },
+    "calculation_status": "not_calculated",
+    "difference_notes": "O detalhamento das rubricas não está disponível neste exemplo. Não é possível calcular o resultado líquido metodológico nem a margem de retenção sem presumir que tributos, taxas e outras deduções ausentes sejam zero."
+  },
+  "extraction_records": [],
+  "evidence": [],
+  "notes": [
+    "Exemplo ilustrativo do contrato OFC Borderô Data Standard v1.0.0.",
+    "Os totais declarados foram preservados sem reconstrução de seus componentes.",
+    "Valores monetários são representados em centavos inteiros de BRL.",
+    "Campos desconhecidos são representados por null; ausência não equivale a zero.",
+    "Este registro não constitui um borderô integralmente validado, pois metadados e evidências do documento original não foram incluídos."
+  ]
+}
