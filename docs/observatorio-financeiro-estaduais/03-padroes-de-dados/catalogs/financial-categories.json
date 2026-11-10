@@ -393,6 +393,17 @@
       "examples": [
         "Outros itens financeiros"
       ]
+    },
+    {
+      "code": "EXP-INSURANCE",
+      "name": "Match Insurance",
+      "financial_class": "operating_expense",
+      "accounting_role": "operating_expense_component",
+      "description": "Insurance premiums or coverage costs directly associated with the match, when the source identifies the nature of the charge.",
+      "examples": [
+        "Seguro torcedor",
+        "Seguro da partida"
+      ]
     }
   ]
 }
