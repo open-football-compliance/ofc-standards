@@ -1,0 +1,28 @@
+name: Validate OFE Standard
+
+on:
+  push:
+    paths:
+      - "docs/observatorio-financeiro-estaduais/**"
+      - "scripts/validate_ofe_standard.py"
+      - ".github/workflows/validate-ofe-standard.yml"
+  pull_request:
+    paths:
+      - "docs/observatorio-financeiro-estaduais/**"
+      - "scripts/validate_ofe_standard.py"
+      - ".github/workflows/validate-ofe-standard.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install JSON Schema validator
+        run: python -m pip install jsonschema==4.23.0
+      - name: Validate OFE standard and reference fixture
+        run: python scripts/validate_ofe_standard.py
