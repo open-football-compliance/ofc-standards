@@ -1,0 +1,599 @@
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openfootballcompliance.org/standards/bordero/v0.1/schema.json",
+  "title": "OFC Borderô Data Standard",
+  "description": "Canonical data model for structured financial and attendance information from football match financial reports (borderôs).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "match",
+    "documents",
+    "attendance",
+    "financial_items",
+    "financial_summary",
+    "extraction_records",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "match": {
+      "$ref": "#/$defs/match"
+    },
+    "documents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/document"
+      }
+    },
+    "attendance": {
+      "$ref": "#/$defs/attendance"
+    },
+    "financial_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/financialItem"
+      }
+    },
+    "financial_summary": {
+      "$ref": "#/$defs/financialSummary"
+    },
+    "extraction_records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/extractionRecord"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "match": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "match_id",
+        "competition",
+        "season",
+        "match_date",
+        "home_team",
+        "away_team"
+      ],
+      "properties": {
+        "match_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "competition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "organizer"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "organizer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "state": {
+              "type": ["string", "null"]
+            },
+            "country": {
+              "type": "string",
+              "default": "BR"
+            },
+            "competition_type": {
+              "type": ["string", "null"],
+              "enum": [
+                "state",
+                "national",
+                "regional",
+                "international",
+                "other",
+                null
+              ]
+            }
+          }
+        },
+        "season": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage": {
+          "type": ["string", "null"]
+        },
+        "round": {
+          "type": ["string", "null"]
+        },
+        "match_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "match_time": {
+          "type": ["string", "null"],
+          "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$"
+        },
+        "home_team": {
+          "type": "string",
+          "minLength": 1
+        },
+        "away_team": {
+          "type": "string",
+          "minLength": 1
+        },
+        "venue": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "city": {
+              "type": ["string", "null"]
+            },
+            "state": {
+              "type": ["string", "null"]
+            },
+            "country": {
+              "type": "string",
+              "default": "BR"
+            },
+            "capacity": {
+              "type": ["integer", "null"],
+              "minimum": 0
+            },
+            "capacity_source": {
+              "type": ["string", "null"]
+            }
+          }
+        },
+        "match_status": {
+          "type": ["string", "null"],
+          "enum": [
+            "scheduled",
+            "played",
+            "postponed",
+            "cancelled",
+            "abandoned",
+            "unknown",
+            null
+          ]
+        }
+      }
+    },
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "document_type",
+        "source_organization",
+        "official",
+        "file_hash"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "document_type": {
+          "type": "string",
+          "enum": [
+            "bordero",
+            "financial_report",
+            "attendance_report",
+            "complementary_document",
+            "other"
+          ]
+        },
+        "source_organization": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_url": {
+          "type": ["string", "null"],
+          "format": "uri"
+        },
+        "publication_date": {
+          "type": ["string", "null"],
+          "format": "date"
+        },
+        "collected_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "file_hash": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "file_hash_algorithm": {
+          "type": "string",
+          "const": "SHA-256"
+        },
+        "version": {
+          "type": ["string", "null"]
+        },
+        "official": {
+          "type": "boolean"
+        },
+        "original_filename": {
+          "type": ["string", "null"]
+        },
+        "mime_type": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "attendance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_attendance",
+        "paying_attendance"
+      ],
+      "properties": {
+        "total_attendance": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "paying_attendance": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "non_paying_attendance": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/attendanceCategory"
+          }
+        },
+        "notes": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "attendanceCategory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_label",
+        "quantity"
+      ],
+      "properties": {
+        "source_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_category": {
+          "type": ["string", "null"]
+        },
+        "quantity": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "paying": {
+          "type": ["boolean", "null"]
+        },
+        "evidence_id": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "financialItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_id",
+        "source_label",
+        "financial_class",
+        "accounting_role",
+        "amount_minor",
+        "currency",
+        "classification_status"
+      ],
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_label": {
+          "type": ["string", "null"]
+        },
+        "financial_class": {
+          "type": "string",
+          "enum": [
+            "revenue",
+            "operating_expense",
+            "tax",
+            "fee",
+            "deduction",
+            "adjustment",
+            "other",
+            "unknown"
+          ]
+        },
+        "category_code": {
+          "type": ["string", "null"]
+        },
+        "accounting_role": {
+          "type": "string",
+          "enum": [
+            "gross_revenue_component",
+            "operating_expense_component",
+            "tax_component",
+            "fee_component",
+            "deduction_component",
+            "adjustment_component",
+            "informational_only",
+            "unclassified"
+          ]
+        },
+        "amount_minor": {
+          "type": ["integer", "null"]
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "evidence_id": {
+          "type": ["string", "null"]
+        },
+        "classification_status": {
+          "type": "string",
+          "enum": [
+            "confirmed",
+            "provisional",
+            "unclassified"
+          ]
+        },
+        "classification_confidence": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "financialSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currency"
+      ],
+      "properties": {
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "declared": {
+          "$ref": "#/$defs/financialTotals"
+        },
+        "calculated": {
+          "$ref": "#/$defs/financialTotals"
+        },
+        "calculation_status": {
+          "type": "string",
+          "enum": [
+            "not_calculated",
+            "calculated",
+            "partially_calculated",
+            "inconsistent"
+          ]
+        },
+        "difference_notes": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "financialTotals": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "gross_revenue_minor": {
+          "type": ["integer", "null"]
+        },
+        "operating_expenses_minor": {
+          "type": ["integer", "null"]
+        },
+        "taxes_minor": {
+          "type": ["integer", "null"]
+        },
+        "fees_minor": {
+          "type": ["integer", "null"]
+        },
+        "deductions_minor": {
+          "type": ["integer", "null"]
+        },
+        "adjustments_minor": {
+          "type": ["integer", "null"]
+        },
+        "net_revenue_minor": {
+          "type": ["integer", "null"]
+        }
+      }
+    },
+    "extractionRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "extraction_id",
+        "document_id",
+        "method",
+        "extracted_at",
+        "pipeline_version",
+        "review_status",
+        "validation_status"
+      ],
+      "properties": {
+        "extraction_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "document_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "manual",
+            "ocr",
+            "automated",
+            "hybrid"
+          ]
+        },
+        "tool_name": {
+          "type": ["string", "null"]
+        },
+        "model_name": {
+          "type": ["string", "null"]
+        },
+        "extracted_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "pipeline_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review_status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "reviewed",
+            "approved",
+            "rejected"
+          ]
+        },
+        "validation_status": {
+          "type": "string",
+          "enum": [
+            "not_validated",
+            "valid",
+            "valid_with_warnings",
+            "invalid"
+          ]
+        },
+        "extraction_confidence": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "document_id",
+        "evidence_type"
+      ],
+      "properties": {
+        "evidence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "document_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "page_number": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "bounding_box": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": [
+            "x",
+            "y",
+            "width",
+            "height"
+          ],
+          "properties": {
+            "x": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "y": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "width": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            },
+            "height": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            },
+            "coordinate_system": {
+              "type": "string",
+              "const": "normalized"
+            }
+          }
+        },
+        "source_text": {
+          "type": ["string", "null"]
+        },
+        "extracted_value": {
+          "type": ["string", "number", "integer", "boolean", "null"]
+        },
+        "evidence_type": {
+          "type": "string",
+          "enum": [
+            "text",
+            "table_cell",
+            "image_region",
+            "manual_reference",
+            "other"
+          ]
+        },
+        "notes": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  }
+}

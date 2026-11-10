@@ -1,0 +1,83 @@
+
+{
+  "schema_version": "0.1.0",
+  "match": {
+    "match_id": "PE-2026-NAU-SPO-AFLITOS",
+    "competition": {
+      "name": "Campeonato Pernambucano",
+      "organizer": null,
+      "state": "Pernambuco",
+      "country": "BR",
+      "competition_type": "state"
+    },
+    "season": "2026",
+    "stage": null,
+    "round": null,
+    "match_date": null,
+    "match_time": null,
+    "home_team": "Náutico",
+    "away_team": "Sport",
+    "venue": {
+      "name": "Estádio dos Aflitos",
+      "city": "Recife",
+      "state": "Pernambuco",
+      "country": "BR",
+      "capacity": null,
+      "capacity_source": null
+    },
+    "match_status": "played"
+  },
+  "documents": [
+    {
+      "document_id": "DOC-PE-2026-NAU-SPO-001",
+      "document_type": "bordero",
+      "source_organization": null,
+      "source_url": null,
+      "publication_date": null,
+      "file_hash": null,
+      "official": true,
+      "original_filename": null,
+      "mime_type": "application/pdf"
+    }
+  ],
+  "attendance": {
+    "total_attendance": 17661,
+    "paying_attendance": 15609,
+    "non_paying_attendance": 2052,
+    "categories": [],
+    "notes": "Detalhamento por categoria de ingresso não disponível neste exemplo."
+  },
+  "financial_items": [],
+  "financial_summary": {
+    "currency": "BRL",
+    "declared": {
+      "gross_revenue_minor": 76866800,
+      "operating_expenses_minor": 30962445,
+      "taxes_minor": null,
+      "fees_minor": null,
+      "deductions_minor": null,
+      "adjustments_minor": null,
+      "net_revenue_minor": 45904355
+    },
+    "calculated": {
+      "gross_revenue_minor": null,
+      "operating_expenses_minor": null,
+      "taxes_minor": null,
+      "fees_minor": null,
+      "deductions_minor": null,
+      "adjustments_minor": null,
+      "net_revenue_minor": null
+    },
+    "calculation_status": "not_calculated",
+    "difference_notes": "O detalhamento dos itens financeiros não está disponível neste exemplo. Os totais declarados foram preservados sem reconstrução de seus componentes."
+  },
+  "extraction_records": [],
+  "evidence": [],
+  "notes": [
+    "Exemplo baseado nos totais financeiros e de público identificados para a partida.",
+    "A data, a identificação da entidade emissora, o hash e a URL do documento original precisam ser recuperados.",
+    "Os valores monetários são representados em centavos inteiros.",
+    "Não foram criados itens financeiros individuais porque o detalhamento das rubricas não está disponível.",
+    "Os campos desconhecidos são representados por null, nunca por zero."
+  ]
+}
