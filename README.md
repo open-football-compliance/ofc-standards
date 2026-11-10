@@ -1,1 +1,1 @@
-# ofc-rfcs
+# ofc-standards
