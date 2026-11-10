@@ -58,6 +58,20 @@
       "items": {
         "type": "string"
       }
+    },
+    "ticket_sales": {
+      "type": "array",
+      "description": "Ticket availability, returns, sales, unit prices and reported proceeds by source row.",
+      "items": {
+        "$ref": "#/$defs/ticketSale"
+      }
+    },
+    "revenue_distribution": {
+      "type": "array",
+      "description": "Allocation of the declared net match revenue among beneficiary clubs or entities.",
+      "items": {
+        "$ref": "#/$defs/revenueDistribution"
+      }
     }
   },
   "$defs": {
@@ -497,6 +511,13 @@
             "string",
             "null"
           ]
+        },
+        "source_section": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Original document section label, e.g. B1, B2, B3."
         }
       },
       "allOf": [
@@ -901,6 +922,175 @@
             "image_region",
             "manual_reference",
             "other"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "ticketSale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ticket_line_id",
+        "document_id",
+        "source_label",
+        "available_quantity",
+        "returned_quantity",
+        "sold_quantity",
+        "unit_price_minor",
+        "proceeds_minor",
+        "currency"
+      ],
+      "properties": {
+        "ticket_line_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "document_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sector": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ticket_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "admission_category": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "available_quantity": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "returned_quantity": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "sold_quantity": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "unit_price_minor": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "proceeds_minor": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "currency": {
+          "type": "string",
+          "const": "BRL"
+        },
+        "evidence_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "revenueDistribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "distribution_id",
+        "document_id",
+        "beneficiary_name",
+        "share_percentage",
+        "discount_minor",
+        "net_payable_minor",
+        "currency"
+      ],
+      "properties": {
+        "distribution_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "document_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "beneficiary_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "beneficiary_tax_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "share_percentage": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "discount_minor": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "net_payable_minor": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "currency": {
+          "type": "string",
+          "const": "BRL"
+        },
+        "evidence_id": {
+          "type": [
+            "string",
+            "null"
           ]
         },
         "notes": {
