@@ -20,7 +20,15 @@ Este repositório concentra as especificações e metodologias institucionais qu
 
 Os documentos são organizados por domínio e finalidade:
 
-- **Observatório Financeiro dos Estaduais (OFE):** escopo, metodologia e indicadores para análise financeira de partidas.
+- **Observatório Financeiro dos Estaduais (OFE):** escopo, metodologia, indicadores e contrato de dados para análise financeira de partidas.
+
+Documentos principais do OFE:
+- `docs/observatorio-financeiro-estaduais/01-escopo/ofe-scope.md`
+- `docs/observatorio-financeiro-estaduais/02-metodologia/financial-indicators-dictionary.md`
+- `docs/observatorio-financeiro-estaduais/03-padroes-de-dados/bordero-data-standard.md`
+- `docs/observatorio-financeiro-estaduais/03-padroes-de-dados/schemas/bordero.schema.json`
+- `docs/observatorio-financeiro-estaduais/03-padroes-de-dados/catalogs/financial-categories.json`
+- `docs/observatorio-financeiro-estaduais/03-padroes-de-dados/validation/fpf-21181-validation.md`
 - **Data Standards:** contratos de dados, modelos canônicos, taxonomias e esquemas de validação.
 - **Governance:** políticas institucionais, governança de dados e diretrizes editoriais.
 
