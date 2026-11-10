@@ -1,67 +1,35 @@
-# Open Football Compliance — Standards
+# OFC Standards
 
-Repositório institucional de padrões, especificações técnicas, metodologias e documentos de referência desenvolvidos pelo **Open Football Compliance (OFC)**.
+Documentação e padrões abertos do **Open Football Compliance (OFC)**.
 
-## 1. Sobre
+Este repositório reúne o mínimo necessário para documentar os dados e indicadores utilizados pelo OFC.
 
-O Open Football Compliance é uma iniciativa dedicada ao desenvolvimento de padrões abertos, transparência, governança e inteligência financeira no futebol.
+## OFE — Observatório Financeiro dos Estaduais
 
-Este repositório concentra as especificações e metodologias institucionais que orientam a estruturação, interpretação e publicação de dados relacionados ao futebol.
+O OFE organiza informações financeiras de partidas de competições estaduais profissionais masculinas e femininas no Brasil, a partir de borderôs e documentos oficiais.
 
-## 2. Objetivos
+### Documentos
 
-- Desenvolver padrões abertos para dados financeiros e operacionais do futebol.
-- Promover interoperabilidade e consistência na representação de informações.
-- Formalizar metodologias de análise e indicadores.
-- Disponibilizar especificações técnicas para implementação por diferentes organizações e fornecedores.
-- Apoiar iniciativas de transparência e governança no futebol.
+- [Escopo](docs/ofe/scope.md) — objetivo e abrangência do observatório.
+- [Indicadores](docs/ofe/indicators.md) — definições e fórmulas.
+- [Padrão de dados](docs/ofe/data-standard.md) — como os dados são organizados.
+- [Exemplo de partida](examples/match-example.json) — exemplo em JSON.
+- [JSON Schema](schemas/match.schema.json) — validação básica do formato.
 
-## 3. Organização
+## Princípios
 
-Os documentos são organizados por domínio e finalidade:
+- Preservar os dados e descrições da fonte original.
+- Não transformar informação ausente em zero.
+- Não classificar rubricas sem fundamento.
+- Distinguir valores declarados de cálculos do OFE.
+- Informar limitações e dados que não puderam ser confirmados.
 
-- **Observatório Financeiro dos Estaduais (OFE):** escopo, metodologia, indicadores e contrato de dados para análise financeira de partidas.
+## Evolução
 
-Documentos principais do OFE:
-- `docs/observatorio-financeiro-estaduais/01-escopo/ofe-scope.md`
-- `docs/observatorio-financeiro-estaduais/02-metodologia/financial-indicators-dictionary.md`
-- `docs/observatorio-financeiro-estaduais/03-padroes-de-dados/bordero-data-standard.md`
-- `docs/observatorio-financeiro-estaduais/03-padroes-de-dados/schemas/bordero.schema.json`
-- `docs/observatorio-financeiro-estaduais/03-padroes-de-dados/catalogs/financial-categories.json`
-- `docs/observatorio-financeiro-estaduais/03-padroes-de-dados/validation/fpf-21181-validation.md`
-- **Data Standards:** contratos de dados, modelos canônicos, taxonomias e esquemas de validação.
-- **Governance:** políticas institucionais, governança de dados e diretrizes editoriais.
+O padrão deve evoluir a partir de necessidades observadas em documentos reais. Novos campos e categorias serão adicionados quando forem necessários, sem antecipar complexidade.
 
-## 4. Versionamento
+## Licença
 
-As especificações seguem versionamento semântico adaptado à evolução de padrões:
+O conteúdo deste repositório está disponibilizado sob a **GNU General Public License v3.0 (GPL-3.0)**, conforme o arquivo [LICENSE](LICENSE).
 
-- `0.x`: versões preliminares, experimentais ou em validação.
-- `1.0`: primeira versão normativa aprovada.
-- Versões posteriores documentam alterações, compatibilidade e histórico de mudanças.
-
-Cada documento deve declarar sua versão, status, escopo e histórico de revisões.
-
-## 5. Implementação
-
-As especificações publicadas pelo OFC são independentes de implementação.
-
-Sistemas, APIs e outras soluções tecnológicas podem implementar os padrões, desde que respeitem suas definições e regras de conformidade.
-
-## 6. Contribuições
-
-Contribuições, sugestões e propostas de alteração devem ser apresentadas por meio de Issues e Pull Requests, seguindo as diretrizes de contribuição do repositório.
-
-## 7. Licença
-
-Unless otherwise stated, documentation, specifications,
-data schemas and catalogs in this repository are licensed
-under the Creative Commons Attribution 4.0 International
-(CC BY 4.0).
-
-To the extent applicable, software source code distributed
-in this repository is licensed under GNU General Public
-License v3.0 (GPL-3.0).
-
-The OFC name, logos and trademarks are not granted under
-these licenses.
+O nome, os logotipos e as marcas OFC não são licenciados para uso promocional ou como indicação de endosso.
