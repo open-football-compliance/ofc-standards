@@ -62,6 +62,8 @@ O escopo contempla informações como:
 
 A implantação será progressiva, começando pelo Campeonato Pernambucano e avançando para outras competições estaduais conforme disponibilidade documental, qualidade dos dados e capacidade operacional.
 
+**Limitação da validação inicial:** a estrutura documental de referência foi examinada com base em um boletim financeiro da FPF referente a uma partida do Campeonato Brasileiro Série B. Essa amostra permite avaliar elementos do modelo de borderô da FPF, mas não constitui validação de uma partida estadual nem comprova compatibilidade com documentos de outras federações. A validação empírica adicional será realizada conforme novas amostras oficiais estiverem disponíveis.
+
 ### 3.3 Initial pilot
 
 O Campeonato Pernambucano será utilizado como piloto inicial para validação da metodologia, do padrão de dados e dos processos de coleta e análise.
