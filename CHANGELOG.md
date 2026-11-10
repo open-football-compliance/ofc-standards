@@ -1,34 +1,13 @@
 # Changelog
 
-Todas as alterações relevantes nas especificações e documentos deste repositório serão registradas neste arquivo.
+## 1.0.0 — Novembro de 2026
 
-O histórico segue uma convenção adaptada de versionamento semântico:
+Primeira versão simples e funcional da documentação do OFE.
 
-- **Added:** novos conteúdos, campos ou funcionalidades.
-- **Changed:** alterações em definições ou comportamentos existentes.
-- **Deprecated:** elementos cuja utilização será descontinuada.
-- **Removed:** elementos removidos.
-- **Fixed:** correções de erros ou inconsistências.
+- Escopo do observatório.
+- Indicadores financeiros básicos.
+- Padrão mínimo de dados de partidas.
+- Exemplo baseado em borderô real da FPF, com limitações explicitadas.
+- JSON Schema enxuto para validar a estrutura do registro.
 
-## [Unreleased]
-
-Alterações em desenvolvimento que ainda não fazem parte de uma versão publicada.
-
-## [0.1.0] - Em preparação
-
-Primeira versão preliminar dos padrões institucionais do OFC.
-
-### Added
-
-- Estrutura inicial do repositório OFC Standards.
-- Documento de escopo do Observatório Financeiro dos Estaduais (OFE).
-- OFC Financial Indicators Dictionary v0.1.
-- OFC Borderô Data Standard v0.1.
-- Schema inicial de dados de borderôs.
-- Catálogo inicial de categorias financeiras.
-- Exemplo de registro de partida.
-- Estrutura inicial de governança documental.
-
-### Status
-
-Versão preliminar. Os documentos ainda dependem de validação com borderôs reais e aprovação institucional.
+A versão inicial foca competições estaduais profissionais masculinas e femininas. A validação empírica inicial do formato utiliza um borderô da FPF de uma partida da Série B; não representa validação de outras federações nem de uma partida estadual.
